@@ -1,11 +1,37 @@
-Do not use this version. It's only on github for me to develop.
-(Unless you want to help making it ofc) :-)
+A game of pong written in C using SDL1.2 with strict C89.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
---------[ Outdated ]------------------------------------------
+The end goal is to make it ultra portable.
 
-Info:
-This version is kind of stable and usable, I recommend it for piece-of-shit hardware tho.
-It's like raylib Lightweigh release but more compatible.
+Want to help?
 
-You can use the Makefile to build it.
+-- Port the game!
+	Adjust the source code, header, library, Makefile, etc. to help expand the access.
+
+-- Smoothen out the source code!
+	Adjust the code's rough edges, maybe do some performance tweaks - that helps alot!
+
+-- Test the game!
+	Compile and launch the game on the most niche of the niches of the platforms and document your work in 'COMPAT'!
+		Example entry:
+		i686	Windows 2000		0 tweaks. Dell Optiplex.
+		^ Arch		^ OS			^ Additional info (Tweaks required and/or hardware)
+
+Quick notes:
+	1. If you see that someone has already tested your OS, it's better to not give 70 thousand entries being the same, if you insist on checking please include the version number and replace the old entry.
+		Before: Windows 11
+		After: Windows 11 22H2
+	2. Make sure your code is pedantic C89! If you need to let go off C89 for the reason being tweaks for a new platform requiring modern libraries - please make your edited code a seprate file.
+		Example:
+		main.c	NINTENDOSWITCH.main.c
+	3. Ensure the code compiles on UNIX systems - the Makefiles provided by me actually cross compile from linux to another platform.
+		If your main workflow is on windows or any other system then you can use something like CMake to work on windows and then just check if it compiles on linux in WSL 1 time.
+	4. Please keep your workflow suckless-style which roughly means:
+		- All the settings are a C header and require recompiling on change
+		- All (here make it just primary) programs are in vanilla C.
+		- Don't use too many bloat/unnecesities.
+		All this ensures extensible support for wider ranges of platforms.
+	5. Rewrites are welcome if they make sense. Like rewriting some parts of SDL code with OpenGL2 to make it work smoother on low-end platforms.
+	6. KYSR - Keep your shit readable.
+	7. ABSOLUTELY no AI generated code (If you use it to assist you/fix your mistakes/help you port - but you write the vast majority of the code that's a pass).
+
+By the way yes - this derived from another repo (youdontknowmeaf/Pong-game) but the SDL rewrite was getting too big so I made it's own thing.
