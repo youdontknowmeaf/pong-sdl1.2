@@ -1,7 +1,16 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-	const int WinX = 500; const int WinY = 300;
+	/* Window */
+		#define WinX 320
+		#define WinY 240
+		#ifdef amiga
+			#define COLORMODE 8
+		#else
+			#define COLORMODE 32
+		#endif
+	/* This thing under here is usually fine but they aren't constants so it makes a problem on some compilers.*/
+	/* const int WinX = 500; const int WinY = 300; */
         
 	/* Player */
 		int PaddleLX = 5;	/* Base X position */

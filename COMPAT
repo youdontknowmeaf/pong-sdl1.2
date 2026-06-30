@@ -4,3 +4,7 @@ x86_64	Ubuntu Desktop 25.6	Nvidia Card
 i686	AntiX Linux		Asus EeePc x101ch
 ARM64	Debian 13 (RPIOS)	RaspberryPi 5
 i386	Windows NT 4.0 SP1	VirtualBox
+
+Theoretical support:
+Arch	System			Additional info
+m68000	Amiga DOS		Not yet checked, ``file`` returns that the binary is compatible (Fuck you AmigaOS)

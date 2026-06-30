@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <SDL/SDL.h>
 #include "config.h"
+#ifdef amiga
+	#include <stdlib.h>
+#endif
 
 int CheckCollisionRect(int x1, int y1, int w1, int h1, int x2, int y2, int w2, int h2) {
 	if (x1 + w1 <= x2 || x1 >= x2 + w2 || y1 + h1 <= y2 || y1 >= y2 + h2) {
@@ -54,14 +57,23 @@ void PaddleRAILogic(int yPos) {
         }
 
 int main(int argc, char *argv[]) {
+#ifdef amiga
+	setenv("SDL_VIDEODRIVER", "amiga", 1);
+#endif
 	SDL_Surface *Screen = NULL;
 
-	if(SDL_Init(SDL_INIT_VIDEO) < 0) {
+	if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) < 0) {
 		printf("SDL Failed to initialize.\n");
+		fprintf(stderr, "Error: %s\n", SDL_GetError());
+		fflush(stderr);
 		return 1;
 	}
 	
-	Screen = SDL_SetVideoMode(WinX, WinY, 32, SDL_HWSURFACE | SDL_DOUBLEBUF);
+#ifdef amiga
+	Screen = SDL_SetVideoMode(WinX, WinY, COLORMODE, SDL_SWSURFACE | SDL_ANYFORMAT);
+#else
+	Screen = SDL_SetVideoMode(WinX, WinY, COLORMODE, SDL_HWSURFACE | SDL_DOUBLEBUF);
+#endif
 
 	if(!Screen) {
 		printf("Window could not be created. SDL_Error @ stage 2\n");
