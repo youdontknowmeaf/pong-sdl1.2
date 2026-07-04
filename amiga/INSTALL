@@ -1,0 +1,4 @@
+Not tested.
+
+1. Install the m68k-amiga-gcc and make
+2. run 'make' and it will make a exec called 'amiga_pong'
