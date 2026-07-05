@@ -7,6 +7,7 @@ i386		Windows NT 4.0 SP1	Yes			VirtualBox
 x86_64/ARM64	Windows 10		Yes			VectasWM
 x86_64		Windows 11		Yes			Heavily modded OS
 i586		HaikuOS			Native			VirtualBox
+MIPS32		PSP OS			Yes			PPSSPP
 
 Theoretical support:
 Arch		System			Cross compiles		Additional info
