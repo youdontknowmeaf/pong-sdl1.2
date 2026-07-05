@@ -1,0 +1,14 @@
+The toolchains for PSP are preinstalled here*.
+All you need to do is make sure 'make' is installed*.
+
+1. Copy the commands from 'set_path.sh' and paste them into your terminal.
+2. Run 'make'
+
+It should make a file called "EBOOT.PBP". You can then use emulator to play it or a real PSP.
+
+For emulator:
+1. Install PPSSPP
+2. Navigate to the folder where your EBOOT.PBP is in PPSSPP
+3. Click on the "SDL" icon
+
+* - done for ubuntu.

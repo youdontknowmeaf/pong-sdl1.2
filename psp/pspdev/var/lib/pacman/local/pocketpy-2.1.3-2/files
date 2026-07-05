@@ -1,0 +1,16 @@
+%FILES%
+psp/
+psp/include/
+psp/include/pocketpy.h
+psp/include/pocketpy/
+psp/include/pocketpy/config.h
+psp/include/pocketpy/export.h
+psp/include/pocketpy/pocketpy.h
+psp/include/pocketpy/vmath.h
+psp/lib/
+psp/lib/libpocketpy.a
+psp/share/
+psp/share/licenses/
+psp/share/licenses/pocketpy/
+psp/share/licenses/pocketpy/LICENSE
+

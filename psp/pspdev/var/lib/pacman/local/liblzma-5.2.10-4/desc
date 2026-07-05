@@ -1,0 +1,42 @@
+%NAME%
+liblzma
+
+%VERSION%
+5.2.10-4
+
+%BASE%
+liblzma
+
+%DESC%
+LZMA provides a general-purpose data-compression library
+
+%URL%
+https://github.com/tukaani-project/xz/
+
+%ARCH%
+any
+
+%BUILDDATE%
+1782901195
+
+%INSTALLDATE%
+1782934079
+
+%PACKAGER%
+Unknown Packager
+
+%SIZE%
+437378
+
+%GROUPS%
+psp-libraries
+
+%LICENSE%
+public domain
+
+%VALIDATION%
+sha256
+
+%XDATA%
+pkgtype=pkg
+

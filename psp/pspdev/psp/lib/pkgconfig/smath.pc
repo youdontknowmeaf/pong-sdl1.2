@@ -1,0 +1,8 @@
+prefix=/psp
+includedir=${prefix}/include
+
+Name: smath
+Description: Simple header-only math library
+Version: 0.1.0
+Cflags: -I${includedir}
+Libs:

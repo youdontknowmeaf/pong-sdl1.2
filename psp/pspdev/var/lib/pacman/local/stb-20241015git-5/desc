@@ -1,0 +1,42 @@
+%NAME%
+stb
+
+%VERSION%
+20241015git-5
+
+%BASE%
+stb
+
+%DESC%
+A collection of single-file public domain libraries for C/C++
+
+%URL%
+https://github.com/nothings/stb
+
+%ARCH%
+any
+
+%BUILDDATE%
+1782901014
+
+%INSTALLDATE%
+1782934080
+
+%PACKAGER%
+Unknown Packager
+
+%SIZE%
+1748683
+
+%GROUPS%
+psp-libraries
+
+%LICENSE%
+custom:Public-Domain or MIT
+
+%VALIDATION%
+sha256
+
+%XDATA%
+pkgtype=pkg
+

@@ -58,7 +58,7 @@ void PaddleRAILogic(int yPos) {
 
 int main(int argc, char *argv[]) {
 #ifdef amiga
-	setenv("SDL_VIDEODRIVER", "amiga", 1);
+	/*setenv("SDL_VIDEODRIVER", "amiga", 1); */
 #endif
 	SDL_Surface *Screen = NULL;
 

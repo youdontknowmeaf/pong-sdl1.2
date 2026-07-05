@@ -1,0 +1,11 @@
+binutils a8b53fe2b5825fa86337623c743d21a19aeb0daf 2025-06-24 Allegrex 2.44 branch
+newlib 9e0a073634ad73e8e088f2e071c55a9fe5d39709 2025-05-17 autoreconf
+pthread-embedded 97fe4ce006b420894f2bcaeb530d1f1f53111fc2 2026-05-12 Merge pull request #3 from fjtrujy/fix/mutex-null-handle-rejection
+gcc 1a33997924916ff5a6f61b64179ff9c8921f46c6 2026-05-11 Merge pull request #10 from pspdev/allegrex-v15.2.0-fedore-fix
+psptoolchain-allegrex 57a511e50c97a70d3da4e2a9a9b15e2dcedafd2d 2026-01-07 Merge pull request #70 from fjtrujy/gcc15_1
+psptoolchain-extra b5f01b00e428a604832e0dfb4bfbb991d1397e3f 2026-06-12 Readd permission fix in CI
+psptoolchain 57a4fc650324dea4637ea5ef9dfc2fc292c004f8 2026-06-07 Merge pull request #199 from pspdev/add-dependencies-for-new-pacman
+pspsdk 7ddea00433f8dbef20a6f5d66291cd4b39417689 2026-07-01 Merge pull request #375 from pspdev/make-sceNetInetPoll-available
+psplinkusb 8cc9876a868d202c0ef4197395c5278aeeff2829 2026-01-02 Merge pull request #67 from pspdev/fix-build
+ebootsigner 17d6386f034ac922f540ca78200961761b23ecae 2024-01-09 Merge pull request #4 from pspdev/make-readme-readable-on-github
+pspdev b00e9255c5260e6589d4ed0b02eb1c515a28502c 2026-06-22 Merge pull request #144 from Lucretia-forks/fix-gentoo

@@ -1,0 +1,13 @@
+prefix=${PSPDEV}/psp
+exec_prefix=${prefix}
+libdir=${PSPDEV}/psp/lib
+includedir=${PSPDEV}/psp/include
+
+Name: FAudio
+URL: https://github.com/FNA-XNA/FAudio
+Description: Accuracy-focused XAudio reimplementation for open platforms
+Version: 0.26.06
+Requires.private: sdl2
+
+Libs: -L${libdir} -lFAudio
+Cflags: -I${includedir} 

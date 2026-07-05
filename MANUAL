@@ -1,12 +1,39 @@
-MAKE OPTIONS\n
-\n
-None:\n
-	compiles a dynamic executable for Linux\n
-		(32 bit, 64 bit, ARM)\n
-\n
-win_9x_DOS:\n
-	compiles a static executable for Windows:\n
-			95, 98, 98 SE, Millenium Edition, NT 4.0 with Service Pack 3.0, 2000, XP, Vista, 7, 10, 11\n
-			64/32 bit, will not work on ARM and 16 bit systems.\n
-	Read the Makefile for instructions how to make a dynamic executable. (Comment out 1 line actually)\n
-	DOS refeers to the fact that Win 95/98 are just 32 bit DOS, it will not work on 16 bit DOS systems. (MSDOS 7.0 for 32 bit)\n
+PT_1: MAKE OPTIONS
+
+- Main Makefile
+
+None:
+	compiles a dynamic executable for the native platform
+		eg. 32 bit, 64 bit, ARM Linux
+
+win_9x_DOS:
+	compiles a static executable for Windows:
+			95, 98, 98 SE, Millenium Edition, NT 4.0 with Service Pack 3.0, 2000, XP, Vista, 7, 10, 11
+			64/32 bit, will not work on ARM and 16 bit systems.
+	Read the Makefile for instructions how to make a dynamic executable. (Comment out 1 line actually)
+	DOS refeers to the fact that Win 95/98 are just 32 bit DOS, it will not work on 16 bit DOS systems. (MSDOS 7.0 for 32 bit)
+
+- Amiga Makefile
+
+None:
+	compiles a static executable for Amiga OS (3.1), requires GPU drivers.
+	I didn't check it cuz I am too stupid to set up the emulator for my needs tho-
+	You have to trust me on word with this one.
+
+PT_2: UNDERSTANDING FILE STRUCTURE
+
+| main folder
+	consists of sub folders, game files, and files for the native architectures.
+| specific folders (eg. amiga/)
+	consists of a special Makefile, install instructions and a precompiled library for that system
+| release/ folder
+	consists of precompiled binaries I put here for convinience.
+
+PT_3: NAMING CONVENTION
+
+native - no tweaks needed, you can use make to build the game on this architecture with no tweaks.
+cross compiles - building this on these would be nightmare so I provided Makefiles to cross compile from linux to these architectures to get a clean executable.
+ARCH - architecture (eg. x86_64)
+COMPAT - list of compatible systems
+LEGAL - license
+bloat - unnecesary things

@@ -1,0 +1,12 @@
+%FILES%
+psp/
+psp/sdk/
+psp/sdk/include/
+psp/sdk/include/pspmath.h
+psp/sdk/lib/
+psp/sdk/lib/libpspmath.a
+psp/share/
+psp/share/licenses/
+psp/share/licenses/libpspmath/
+psp/share/licenses/libpspmath/LICENSE
+

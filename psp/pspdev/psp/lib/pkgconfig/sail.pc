@@ -1,0 +1,11 @@
+prefix=${PSPDEV}/psp
+exec_prefix=${PSPDEV}/psp
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include/sail
+
+Name: sail
+Description: SAIL client library
+Version: 1.0.0
+Requires: sail-common
+Libs: -L${libdir} -lsail
+Cflags: -I${includedir}

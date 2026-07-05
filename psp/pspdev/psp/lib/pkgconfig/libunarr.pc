@@ -1,0 +1,11 @@
+prefix=/__w/psp-packages/psp-packages/unarr/pkg/unarr/psp
+includedir=${prefix}/include
+libdir=${prefix}/lib
+
+Name: unarr
+Description: A decompression library for rar, tar and zip files.
+Version: 1.1.0
+Cflags: -I${includedir}
+Requires.private:  liblzma zlib
+Libs: -L${libdir} -lunarr
+Libs.private: -I/usr/local/pspdev/psp/include -l/usr/local/pspdev/psp/lib/libbz2.a

@@ -1,0 +1,16 @@
+%FILES%
+psp/
+psp/include/
+psp/include/ya2d.h
+psp/include/ya2d_draw.h
+psp/include/ya2d_image.h
+psp/include/ya2d_main.h
+psp/include/ya2d_texture.h
+psp/include/ya2d_utils.h
+psp/lib/
+psp/lib/libya2d.a
+psp/share/
+psp/share/licenses/
+psp/share/licenses/ya2d/
+psp/share/licenses/ya2d/LICENSE.txt
+

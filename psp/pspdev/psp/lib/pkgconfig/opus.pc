@@ -1,0 +1,16 @@
+# Opus codec reference implementation pkg-config file
+
+prefix=${PSPDEV}/psp
+exec_prefix=${PSPDEV}/psp
+libdir=${PSPDEV}/psp/lib
+includedir=${PSPDEV}/psp/include
+
+Name: Opus
+Description: Opus IETF audio codec ( build)
+URL: https://opus-codec.org/
+Version: 1.6.1
+Requires:
+Conflicts:
+Libs: -L${PSPDEV}/psp/lib -lopus
+Libs.private: -lm
+Cflags: -I${PSPDEV}/psp/include/opus

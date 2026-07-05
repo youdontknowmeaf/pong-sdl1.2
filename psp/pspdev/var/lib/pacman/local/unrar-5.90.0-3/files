@@ -1,0 +1,14 @@
+%FILES%
+psp/
+psp/include/
+psp/include/unrar.h
+psp/lib/
+psp/lib/libunrar.a
+psp/share/
+psp/share/doc/
+psp/share/doc/unrar/
+psp/share/doc/unrar/manual.txt
+psp/share/licenses/
+psp/share/licenses/unrar/
+psp/share/licenses/unrar/license.txt
+

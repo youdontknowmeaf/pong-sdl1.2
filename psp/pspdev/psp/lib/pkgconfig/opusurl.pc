@@ -1,0 +1,14 @@
+# opusurl installed pkg-config file
+
+prefix=${PSPDEV}/psp
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: opusurl
+Description: High-level Opus decoding library, URL support
+Version: 0.12
+Requires: opusfile
+Requires.private: 
+Conflicts:
+Libs: -L${libdir} -lopusurl

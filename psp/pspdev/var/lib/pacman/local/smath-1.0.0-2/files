@@ -1,0 +1,17 @@
+%FILES%
+psp/
+psp/include/
+psp/include/smath.hpp
+psp/lib/
+psp/lib/cmake/
+psp/lib/cmake/smath/
+psp/lib/cmake/smath/smathConfig.cmake
+psp/lib/cmake/smath/smathConfigVersion.cmake
+psp/lib/cmake/smath/smathTargets.cmake
+psp/lib/pkgconfig/
+psp/lib/pkgconfig/smath.pc
+psp/share/
+psp/share/licenses/
+psp/share/licenses/smath/
+psp/share/licenses/smath/LICENSE.txt
+

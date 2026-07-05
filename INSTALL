@@ -1,0 +1,15 @@
+If you are reading this - this INSTALL covers the native systems (defined in ./COMPAT)
+
+GNU+Linux/UNIX-like/HaikuOS:
+	Install SDL1.2 library across your device with a package manager.
+	Linux (Ubuntu):
+		sudo apt install libsdl1.2-dev
+	HaikuOS:
+		pkgman install libsdl
+	Install make and gcc (Should be preinstalled)
+	Run 'make'
+	The executable will be called 'Pong.out'
+
+Windows:
+	As I have not tried compiling this on windows, you will need a linux machine. Follow the last section until it says 'run make'
+	So.. you just have to run 'make win_9x_DOS' and the executable will be called 'Pong_w95_i386.exe' because the executable is 32 bit so it will run on any windows system.

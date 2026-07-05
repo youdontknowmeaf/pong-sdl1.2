@@ -1,0 +1,11 @@
+%FILES%
+psp/
+psp/include/
+psp/include/dbglogger.h
+psp/lib/
+psp/lib/libdbglogger.a
+psp/share/
+psp/share/licenses/
+psp/share/licenses/dbglogger/
+psp/share/licenses/dbglogger/LICENSE
+

@@ -1,0 +1,12 @@
+%FILES%
+psp/
+psp/include/
+psp/include/gif_lib.h
+psp/lib/
+psp/lib/libgif.a
+psp/lib/libutil.a
+psp/share/
+psp/share/licenses/
+psp/share/licenses/giflib/
+psp/share/licenses/giflib/COPYING
+
