@@ -1,0 +1,1 @@
+/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc -O2 -mcpu=750 -meabi -mhard-float   -DGEKKO -DHW_RVL   -o game.elf main.c   -L/opt/devkitpro/libogc/lib/wii   -I/opt/devkitpro/libogc/include   -I/opt/devkitpro/portlibs/wii/include   -L/opt/devkitpro/portlibs/wii/lib   -T/opt/devkitpro/devkitPPC/powerpc-eabi/lib/rvl.ld   -lSDL -lwiikeyboard -lwiiuse -lbte -lasnd -laesnd -logc -lm
