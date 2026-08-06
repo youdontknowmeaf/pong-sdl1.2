@@ -1,5 +1,9 @@
 #include <stdio.h>
-#include <SDL/SDL.h>
+#ifdef VSTUDIO
+	#include <SDL.h>
+#else
+	#include <SDL/SDL.h>
+#endif
 #include "config.h"
 #ifdef amiga
 	#include <stdlib.h>
