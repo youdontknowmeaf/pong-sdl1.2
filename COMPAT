@@ -13,6 +13,7 @@ MIPS32		PSP OS			Yes			PPSSPP
 Theoretical support:
 Arch		System			Cross compiles		Additional info
 m68000		Amiga DOS		Yes			Not yet checked, info returns that the binary is compatible (Fuck you AmigaOS)
+SH-4		Sega Dreamcast		Yes			Debug ELF works in emulator - Proper iso is broken
 
 Borked:
 Arch		System			Cross compiles		Additional info

@@ -1,22 +1,8 @@
 #include <stdio.h>
-#include <gccore.h>
 #include <SDL/SDL.h>
 #include "config.h"
-#include <wiiuse/wpad.h>
-#undef main
-#include <ogc/system.h>
-
-int TerminateRequested() {
-    return 0;
-}
-
-void Terminate() {
-    exit(0);
-}
-
-/* ^^^ Hack hack shitass hack made by AI cyz fycj this shit */
-
-static bool isSearching = false;
+#include <dc/maple.h>
+#include <dc/maple/controller.h>
 
 int CheckCollisionRect(int x1, int y1, int w1, int h1, int x2, int y2, int w2, int h2) {
 	if (x1 + w1 <= x2 || x1 >= x2 + w2 || y1 + h1 <= y2 || y1 >= y2 + h2) {
@@ -69,42 +55,18 @@ void PaddleRAILogic(int yPos) {
                         }
         }
 
-int main(int argc, char **argv) {
-SYS_STDIO_Report(true);
-
-	VIDEO_Init(); //...
-	WPAD_Init();
-	WPAD_SetDataFormat(WPAD_CHAN_ALL, WPAD_FMT_BTNS_ACC_IR);
-
-/*	
-	// Hack <> /
-GXRModeObj *vmode = VIDEO_GetPreferredMode(NULL);
-void *xfb = MEM_K0_TO_K1(SYS_AllocateFramebuffer(vmode));
-VIDEO_Configure(vmode);
-VIDEO_SetNextFramebuffer(xfb);
-VIDEO_SetBlack(FALSE);
-VIDEO_Flush();
-VIDEO_WaitVSync();
-if(vmode->viTVMode&VI_NON_INTERLACE) VIDEO_WaitVSync();
-	
-*/
-//	/ Hack </> /
-//nvm...
+int main(int argc, char *argv[]) {
 	SDL_Surface *Screen = NULL;
+	maple_device_t *cont = maple_enum_type(0, MAPLE_FUNC_CONTROLLER); /*Dreamcast bullshit 4 controller.*/
 
-	if(SDL_Init(SDL_INIT_VIDEO) < 0) {
+	if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) < 0) {
 		printf("SDL Failed to initialize.\n");
 		fprintf(stderr, "Error: %s\n", SDL_GetError());
 		fflush(stderr);
 		return 1;
 	}
 	
-	Screen = SDL_SetVideoMode(WinX, WinY, COLORMODE, SDL_SWSURFACE);
-	
-	if (Screen == NULL) {
- 	   printf("CRITICAL: SDL_SetVideoMode returned NULL: %s\n", SDL_GetError());
-	   while(1);
-	}
+	Screen = SDL_SetVideoMode(WinX, WinY, COLORMODE, SDL_HWSURFACE | SDL_DOUBLEBUF);
 
 	if(!Screen) {
 		printf("Window could not be created. SDL_Error @ stage 2\n");
@@ -113,45 +75,37 @@ if(vmode->viTVMode&VI_NON_INTERLACE) VIDEO_WaitVSync();
 
 	SDL_WM_SetCaption("SDL Pong", NULL);
 	
-	//for(;;);
-
 	while(Quit != 1) {
-		//Event handling
+		/*Event handling*/
 		while(SDL_PollEvent(&Event)) {
 			if(Event.type == SDL_QUIT) {
 				Quit = 1;
 			}
 		}
-		
-		//Drawing
+		/*Alternative Event handling (dreamcast)*/	
+		if(cont) {
+                cont_state_t *state = (cont_state_t *)maple_dev_status(cont);
+                if(state->buttons & CONT_DPAD_UP) PaddleLY -= 20;
+                if(state->buttons & CONT_DPAD_DOWN) PaddleLY += 20;
+                }
+
+		/*Drawing*/
 
 		SDL_FillRect(Screen, NULL, SDL_MapRGB(Screen->format, 0, 0, 0));
 		SDL_FillRect(Screen, &PaddleL, SDL_MapRGB(Screen->format, 255, 0, 0));
 		SDL_FillRect(Screen, &PaddleR, SDL_MapRGB(Screen->format, 255, 0, 0));
 		SDL_FillRect(Screen, &Ball, SDL_MapRGB(Screen->format, 255, 0, 0));
-				// ^ Window update 
+				/* ^ Window update */
 		SDL_Flip(Screen);
                 SDL_Delay(33);				
-				//Update
-                WPAD_ScanPads();
-		u32 pressed = WPAD_ButtonsHeld(0);
+				/*Update*/
                 UpdatePaddleL(&PaddleL);
                 UpdatePaddleR(&PaddleR);
                 PaddleRAILogic(BallY);
                 UpdateBall(&Ball);
-		
-		for(;;);
-				//Wiimote
-		if(pressed & WPAD_BUTTON_HOME) break;
-		if(pressed & WPAD_BUTTON_PLUS) {
-			if(isSearching) WPAD_StopSearch();
-			else WPAD_Search();
-		}
-		if(pressed & WPAD_BUTTON_UP) PaddleLY -= 20;
-		if(pressed & WPAD_BUTTON_DOWN) PaddleLY += 20;
 	}
-
-				WPAD_Shutdown();	
+						
 				SDL_Quit();
+				puts("\0");
 				return 0;
 				}
