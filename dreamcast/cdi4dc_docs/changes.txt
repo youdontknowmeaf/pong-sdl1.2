@@ -1,0 +1,7 @@
+Changes :
+	
+0.2b : 	- If the iso doesn't exists, cdi4dc don't create an empty CDI file. (Thx Fackue)
+	- Fixed a problem with CD Labels with spaces (Thx Fackue)
+	- Checks if the ISO is a veritable 11702 iso.
+
+0.1b :	Initial release

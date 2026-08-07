@@ -1,0 +1,34 @@
+!!! IMPORTANT - CDI4DC TOOL REQUIRES libncursesw5 AND MANY MODERN DISTROS DON'T SHIP IT - libncursesw6 IS FULLY BACKWARDS COMPATIBLE
+YOU NEED TO MAKE THIS SYMLINK FOR IT TO WORK:
+
+sudo ln -s /lib/i386-linux-gnu/libncurses.so.6 /lib/i386-linux-gnu/libncurses.so.5
+
+Install instructions
+
+Compiling from GNU/Linux:
+
+Install one of these:
+	genisofs OR mkisofs (When using mkisofs you need to uncomment the line starting with #mkisofs and comment the line starting with genisofs)
+
+Install the KOS toolchain and run "source ./source_shell.sh"
+
+To compile make sure you have 'make' installed and that kos-cc works.
+
+To compile:
+	'make'
+	This makes a .elf that can be ran in a emulator like flycast - just drag it into the window.
+
+To make a Dreamcast CD image for CD-ROM:
+	'make format'
+	This makes a compatible .iso and attempts to convert it to .cdi
+	(!!! .ISO WONT WORK, IF CONVERTING TO CDI AUTOMATICALLY DOESNT WORK YOU NEED TO CONVERT IT BY YOURSELF !!!)
+	You can drag and drop the .cdi to a emulator.
+
+Editing the credentials:
+	You can change the iplogo.png with your own image as long as it's 128 colors or less and is 320x90 or smaller.
+	If it has transparent background - the color code for transparent is "#c0c0c0" or "192, 192, 192".
+	It also must be under 8192 bytes.
+
+	To edit the metadata edit the file ip.txt - the fields are self explainatory but don't edit what you don't understand.
+	
+https://dreamcast.wiki/Dreamcast.wiki for more info.
