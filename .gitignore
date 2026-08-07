@@ -4,3 +4,6 @@
 amiga_pong
 *.iso
 *.PBP
+*.cdi
+*.elf
+.TOKEN
