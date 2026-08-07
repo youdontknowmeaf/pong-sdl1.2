@@ -11,5 +11,17 @@ GNU+Linux/UNIX-like/HaikuOS:
 	The executable will be called 'Pong.out'
 
 Windows:
-	As I have not tried compiling this on windows, you will need a linux machine. Follow the last section until it says 'run make'
-	So.. you just have to run 'make win_9x_DOS' and the executable will be called 'Pong_w95_i386.exe' because the executable is 32 bit so it will run on any windows system.
+From Linux:
+	Install make and i686-w64-mingw32-gcc
+	Ubuntu/Debian:
+		sudo apt install mingw-w64-i686-dev 
+	Run 'make win_9x_DOS'
+	The executable will be called 'Pong_w95_i386.exe'
+From Windows:
+	Install Visual Studio (Tested on VS 2013)
+	Open this as visual studio project (ConsoleApplication1.vcxproj)
+	Click Build > Build ConsoleApplication1
+	It should make a executable called "Pong.exe"
+
+!!! Idk how to do things on windows so when you compile from Windows make sure the exe is in the same folder as SDL.dll
+(SDL-Windows/SDL*/lib/x86/SDL.dll <- It's here) 

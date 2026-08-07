@@ -6,9 +6,14 @@ ARM64		Debian 13 (RPIOS)	Native			RaspberryPi 5
 i386		Windows NT 4.0 SP1	Yes			VirtualBox
 x86_64/ARM64	Windows 10		Yes			VectasWM
 x86_64		Windows 11		Yes			Heavily modded OS
+x86_64		Windows 8.1		Native (VS13)		ThinkPad x230
 i586		HaikuOS			Native			VirtualBox
 MIPS32		PSP OS			Yes			PPSSPP
 
 Theoretical support:
 Arch		System			Cross compiles		Additional info
 m68000		Amiga DOS		Yes			Not yet checked, info returns that the binary is compatible (Fuck you AmigaOS)
+
+Borked:
+Arch		System			Cross compiles		Additional info
+PowerPC		Nintendo Wii		Yes			Doesn't work in Dolphin emu

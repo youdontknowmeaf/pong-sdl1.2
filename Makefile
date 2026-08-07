@@ -10,7 +10,7 @@ SOURCE = main.c
 all: $(TARGET)
 
 # -- [ Windows 95/98/DOS ] \\
-
+NATIVE_WIN: CXX         =       gcc
 win_9x_DOS: CXX         =       i686-w64-mingw32-gcc
 win_9x_DOS: TARGET      =       Pong_w95_i386.exe
 win_9x_DOS: CXXFLAGS    =       -march=i386 -mtune=i386 -O2
