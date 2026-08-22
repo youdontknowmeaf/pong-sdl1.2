@@ -1,5 +1,7 @@
+[==================== [ Compatibility list ] ====================]
 Tested systems:
 Arch		System			Cross compiles		Additional info
+------------------------------------------------------------------------------------|
 x86_64		Ubuntu Desktop 25.6	Native			Nvidia Card
 i686		AntiX Linux		Native			Asus EeePc x101ch
 ARM64		Debian 13 (RPIOS)	Native			RaspberryPi 5
@@ -10,11 +12,15 @@ x86_64		Windows 8.1		Native (VS13)		ThinkPad x230
 i586		HaikuOS			Native			VirtualBox
 MIPS32		PSP OS			Yes			PPSSPP
 SH-4            Sega Dreamcast          Yes                     Both debug and the .cdi work (No need for 32mb mod)
+PowerPC		Nintendo WiiU		Yes			Aroma + Legacy, doesn't support WiiMotes
 
 Theoretical support:
 Arch		System			Cross compiles		Additional info
+------------------------------------------------------------------------------------|
 m68000		Amiga DOS		Yes			Not yet checked, info returns that the binary is compatible (Fuck you AmigaOS)
+PowerPC		Xbox 360		Yes			Segfaults but .elf is detected (Likely video not initialised)
 
 Borked:
 Arch		System			Cross compiles		Additional info
+------------------------------------------------------------------------------------|
 PowerPC		Nintendo Wii		Yes			Doesn't work in Dolphin emu

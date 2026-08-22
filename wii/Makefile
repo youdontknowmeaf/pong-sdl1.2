@@ -17,8 +17,8 @@ include $(DEVKITPPC)/wii_rules
 #---------------------------------------------------------------------------------
 TARGET		:=	$(notdir $(CURDIR))
 BUILD		:=	build
-SOURCES		:=	source
-DATA		:=	data
+SOURCES		:=	.
+DATA		:=
 INCLUDES	:=
 
 #---------------------------------------------------------------------------------
@@ -33,7 +33,8 @@ LDFLAGS	=	-g $(MACHDEP) -Wl,-Map,$(notdir $@).map
 #---------------------------------------------------------------------------------
 # any extra libraries we wish to link with the project
 #---------------------------------------------------------------------------------
-#LIBS	:=	-lSDL -lpngu `$(PREFIX)pkg-config freetype2 libpng libjpeg --libs` -lfat -lwiiuse -lbte -logc -lm
+#LIBS	:=	-lSDL -laesnd -lfat -lwiiuse -lbte -logc -lm #`$(PREFIX)pkg-config freetype2 libpng libjpeg --libs` -lpngu
+LIBS	:=	-lSDL -laesnd -lvorbisidec -lz -lfat -lwiiuse -lbte -lwiikeyboard -logc -lm
 
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing

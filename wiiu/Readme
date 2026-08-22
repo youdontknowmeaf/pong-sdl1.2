@@ -1,0 +1,29 @@
+|=======================================================|
+|		Pong_u (WiiU)				|
+|=======================================================|
+
+[ Required packages ]
+- DevKitPro
+- DevKit PowerPC
+- SDL2 for WiiU
+- Cmake, Make, Bash
+
+[ How to compile ]
+
+$ source set_path.sh
+$ cd build
+$ powerpc-eabi-cmake ..
+$ make
+
+[ How to install ]
+
+# For Aroma
+Copy Pong_u.wuhb to SD:/wiiu/apps/Pong_u/
+Launch from system menu
+
+# For Legacy envirnoments:
+Copy Pong_u.rpx to SD:/wiiu/apps/Pong_u/
+(optional) Copy the meta/ folder to SD:/wiiu/apps/Pong_u/
+Launch with Homebrew Launcher app
+
+You can debug the executable with wiiu-ld or GDB via Pong_u.elf

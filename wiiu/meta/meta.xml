@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<app version="1">
+    <name>Pong U</name>
+    <coder>SpookScoop93</coder>
+    <version>0.1.0</version>
+    <release_date>20260722</release_date>
+    <short_description>A lightweigh Pong clone for Wii U</short_description>
+    <long_description>Bounce a ball with a paddle. Right/Up DPad - Up, Left/Down DPad - Down.</long_description>
+</app>
