@@ -1,0 +1,10 @@
+How to compile:
+$ source set_path.sh
+$ make
+Make sure PSVita SDK is installed. You may want to edit the set_path.sh script to where you installed your SDK.
+
+How to make a installable archive:
+$ 
+
+How to make a installable archive:
+$ ./make_vpk.sh <custom_name.vpk>

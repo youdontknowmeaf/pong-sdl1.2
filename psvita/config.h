@@ -2,10 +2,13 @@
 #define CONFIG_H
 
 	/* Window */
-		#define WinX 300
-		#define WinY 200
-		#define COLORMODE 16 // Saving tiny bit of power on shitass 3DS xD
-
+		#define WinX 480
+		#define WinY 272
+		#ifdef amiga
+			#define COLORMODE 8
+		#else
+			#define COLORMODE 32
+		#endif
 	/* This thing under here is usually fine but they aren't constants so it makes a problem on some compilers.*/
 	/* const int WinX = 500; const int WinY = 300; */
         

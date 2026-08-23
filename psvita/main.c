@@ -1,6 +1,7 @@
-#include <SDL.h>
-#include <3ds.h>
+#include <stdio.h>
+#include <SDL/SDL.h>
 #include "config.h"
+#include <psp2/ctrl.h>
 
 int CheckCollisionRect(int x1, int y1, int w1, int h1, int x2, int y2, int w2, int h2) {
 	if (x1 + w1 <= x2 || x1 >= x2 + w2 || y1 + h1 <= y2 || y1 >= y2 + h2) {
@@ -63,7 +64,7 @@ int main(int argc, char *argv[]) {
 		return 1;
 	}
 	
-	Screen = SDL_SetVideoMode(WinX, WinY, COLORMODE, SDL_SWSURFACE);
+	Screen = SDL_SetVideoMode(WinX, WinY, COLORMODE, SDL_HWSURFACE | SDL_DOUBLEBUF);
 
 	if(!Screen) {
 		printf("Window could not be created. SDL_Error @ stage 2\n");
@@ -73,26 +74,16 @@ int main(int argc, char *argv[]) {
 	SDL_WM_SetCaption("SDL Pong", NULL);
 	
 	while(Quit != 1) {
-		hidScanInput();
-		u32 kHeld = hidKeysHeld();
 		/*Event handling*/
 		while(SDL_PollEvent(&Event)) {
 			if(Event.type == SDL_QUIT) {
 				Quit = 1;
 			}
 		}
-		if(kHeld & KEY_UP) PaddleLY -= 20;
-		if(kHeld & KEY_DOWN) PaddleLY += 20;
-		circlePosition cpos;
-    		hidCircleRead(&cpos);
-    		if (cpos.dy > 50)  PaddleLY -= 20; // Pushed up on circle pad
-    		if (cpos.dy < -50) PaddleLY += 20; // Pushed down on circle pad
-		
-		
-		UpdatePaddleL(&PaddleL);
-                UpdatePaddleR(&PaddleR);
-                PaddleRAILogic(BallY);
-                UpdateBall(&Ball);
+		SceCtrlData pad;
+		sceCtrlPeekBufferPositive(0, &pad, 1);
+		if(pad.buttons & SCE_CTRL_UP) PaddleLY -= 20;
+		if (pad.buttons & SCE_CTRL_DOWN) PaddleLY += 20;
 
 		/*Drawing*/
 
@@ -105,11 +96,11 @@ int main(int argc, char *argv[]) {
                 SDL_Delay(33);				
 				/*Update*/
                 
-                //UpdatePaddleL(&PaddleL);
-                //UpdatePaddleR(&PaddleR);
-                //PaddleRAILogic(BallY);
-                //UpdateBall(&Ball);
-		//printf("\r\033[1;37;43mScore: %d\033[0m", Score); fflush(stdout);
+                UpdatePaddleL(&PaddleL);
+                UpdatePaddleR(&PaddleR);
+                PaddleRAILogic(BallY);
+                UpdateBall(&Ball);
+		printf("\r\033[1;37;43mScore: %d\033[0m", Score); fflush(stdout);
 	}
 						
 				SDL_Quit();
