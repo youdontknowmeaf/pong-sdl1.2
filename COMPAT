@@ -14,7 +14,7 @@ MIPS32		Playstation Portable	Yes			PPSSPP
 SH-4            Sega Dreamcast          Yes                     Both debug and the .cdi work (No need for 32mb mod)
 PowerPC		Nintendo WiiU		Yes			Aroma + Legacy, doesn't support WiiMotes
 ARM11/ARM9	Nintendo (New) 3DS	Yes			Tested in Azahar
-ARM		Playstation Vita	Yes			Tested in Vita3k (runs @ 30 FPS)
+ARM		Playstation Vita	Yes			Tested in Vita3k (runs @ 30 FPS) ! Doesn't work with PSTV
 
 Theoretical support:
 Arch		System			Cross compiles		Additional info
