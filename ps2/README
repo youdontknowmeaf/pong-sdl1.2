@@ -1,0 +1,1 @@
+No input works. SDL_Joystick seems to break the whole game when I add SDL_INIT_JOYSTICK which is stupid to say the least.

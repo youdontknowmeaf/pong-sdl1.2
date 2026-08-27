@@ -1,5 +1,5 @@
 [==================== [ Compatibility list ] ====================]
-Tested systems:
+Working systems:
 Arch		System			Cross compiles		Additional info
 ------------------------------------------------------------------------------------|
 x86_64		Ubuntu Desktop 25.4	Native			Nvidia Card
@@ -16,13 +16,14 @@ PowerPC		Nintendo WiiU		Yes			Aroma + Legacy, doesn't support WiiMotes
 ARM11/ARM9	Nintendo (New) 3DS	Yes			Tested in Azahar
 ARM		Playstation Vita	Yes			Tested in Vita3k (runs @ 30 FPS) ! Doesn't work with PSTV
 
-Theoretical support:
+Works with problems:
 Arch		System			Cross compiles		Additional info
 ------------------------------------------------------------------------------------|
-m68000		Commodore Amiga DOS	Yes			Not yet checked, info returns that the binary is compatible (Fuck you AmigaOS)
-PowerPC		Xbox 360		Yes			Segfaults but .elf is detected (Likely video not initialised)
+Sony EE		Playstation 2		Yes			I can't get the input to work, everything else works.
 
 Borked:
 Arch		System			Cross compiles		Additional info
 ------------------------------------------------------------------------------------|
-PowerPC		Nintendo Wii		Yes			Doesn't work in Dolphin emu
+PowerPC		Nintendo Wii		Yes			Abondoned
+m68000          Commodore Amiga DOS     Yes                     Not yet checked, info returns that the binary is compatible (Fuck you AmigaOS)
+PowerPC         Xbox 360                Yes                     Segfaults but .elf is detected (Likely video not initialised)

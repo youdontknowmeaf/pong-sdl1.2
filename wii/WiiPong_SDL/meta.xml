@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<app version="1">
+    <name>WiiPong SDL</name>
+    <coder>SpookScoop93</coder>
+    <version>0.1.0</version>
+    <release_date>20260727</release_date>
+    <short_description>1979 Pong but 1.5 MB in size and worse.</short_description>
+    <long_description>Bounce *balls* with a stick. DPad Up - Up, DPad Down - Down. HomeButton to exit to HB Menu.</long_description>
+</app>

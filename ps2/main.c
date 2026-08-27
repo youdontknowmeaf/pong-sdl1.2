@@ -1,6 +1,7 @@
 #include <stdio.h>
-	#include <SDL/SDL.h>
+#include <SDL.h>
 #include "config.h"
+
 
 int CheckCollisionRect(int x1, int y1, int w1, int h1, int x2, int y2, int w2, int h2) {
 	if (x1 + w1 <= x2 || x1 >= x2 + w2 || y1 + h1 <= y2 || y1 >= y2 + h2) {
@@ -54,17 +55,20 @@ void PaddleRAILogic(int yPos) {
         }
 
 int main(int argc, char *argv[]) {
-	SDL_Surface *Screen = NULL;
+	if(SDL_Init(SDL_INIT_VIDEO) < 0) {
+                printf("SDL Failed to initialize.\n");
+                fprintf(stderr, "Error: %s\n", SDL_GetError());
+                fflush(stderr);
+                return 1;
+        }
 
-	if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) < 0) {
-		printf("SDL Failed to initialize.\n");
-		fprintf(stderr, "Error: %s\n", SDL_GetError());
-		fflush(stderr);
-		return 1;
-	}
 	
-	Screen = SDL_SetVideoMode(WinX, WinY, COLORMODE, SDL_SWSURFACE);
-
+	SDL_Surface *Screen = NULL;
+	Screen = SDL_SetVideoMode(WinX, WinY, COLORMODE, SDL_HWSURFACE | SDL_DOUBLEBUF);
+	SDL_JoystickEventState(SDL_ENABLE);
+	if(SDL_NumJoysticks() > 0) {
+		SDL_JoystickOpen(0);
+	}
 	if(!Screen) {
 		printf("Window could not be created. SDL_Error @ stage 2\n");
 		return 1;
@@ -73,17 +77,24 @@ int main(int argc, char *argv[]) {
 	SDL_WM_SetCaption("SDL Pong", NULL);
 	
 	while(Quit != 1) {
+	
 		/*Event handling*/
 		while(SDL_PollEvent(&Event)) {
 			if(Event.type == SDL_QUIT) {
 				Quit = 1;
 			}
-		if(Event.type == SDL_KEYDOWN) {
-			if(Event.key.keysym.sym == SDLK_UP) PaddleLY -= 20;
-			if(Event.key.keysym.sym == SDLK_DOWN) PaddleLY += 20;
+
+			/* SDL native input */
+		if(Event.type == SDL_JOYAXISMOTION) {
+			if(Event.jaxis.axis == 1) {
+				if(Event.jaxis.value < -16384) PaddleLY -= 20;
+				if(Event.jhat.value > 16384) PaddleLY += 20;
+				}
+			}
 		}
-		}
-		
+			/* Other input */
+
+
 		/*Drawing*/
 
 		SDL_FillRect(Screen, NULL, SDL_MapRGB(Screen->format, 0, 0, 0));
@@ -101,7 +112,6 @@ int main(int argc, char *argv[]) {
                 UpdateBall(&Ball);
 		printf("\r\033[1;37;43mScore: %d\033[0m", Score); fflush(stdout);
 	}
-						
 				SDL_Quit();
 				puts("\0");
 				return 0;
